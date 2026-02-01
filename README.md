@@ -92,8 +92,34 @@ The same vocoder is used for both Transformer and MAMBA models to ensure a fair 
 ## Repository Structure
 
 ```text
-├── checkpoints_mamba├── checkpoints_transformer├── data/hindi│   ├── wavs│   ├── mels│   └── metadata├── models│   ├── transformer_tts.py│   └── mamba_tts.py├── preprocess│   ├── audio.py│   ├── text.py│   ├── dataset.py│   └── collate.py├── train.py├── inference.py├── vocoder.py├── output.wav└── output_mel.npy
+.
+├── checkpoints_mamba
+│   ├── best_model.pt
+│   └── last_model.pt
+├── checkpoints_transformer
+│   ├── best_model.pt
+│   └── last_model.pt
+├── data
+│   └── hindi
+│       ├── wavs
+│       ├── mels
+│       └── metadata
+├── models
+│   ├── transformer_tts.py
+│   └── mamba_tts.py
+├── preprocess
+│   ├── audio.py
+│   ├── text.py
+│   ├── dataset.py
+│   └── collate.py
+├── train.py
+├── inference.py
+├── vocoder.py
+├── output_mel.npy
+└── output.wav
 ```
+
+---
 
 ## Key Contributions
 
@@ -107,4 +133,34 @@ The same vocoder is used for both Transformer and MAMBA models to ensure a fair 
 - No objective MOS or human evaluation was conducted.
 - Griffin–Lim vocoder limits audio quality.
 - Future work could integrate neural vocoders (e.g., HiFi-GAN) and phoneme-based tokenization.
-  this is what i have down in this markdown could you make the repository structure render properly anything alse you might wanna add?
+
+## Dataset Setup
+
+The IIT Madras Hindi Speech Dataset is **not included** in this repository due to size and licensing constraints.
+
+To use this project:
+
+1. Download the dataset from the official IIT Madras website.
+2. Organize the files in the following structure:
+
+```text
+data/hindi/
+├── wavs/
+└── metadata/
+```
+
+3. Generate mel-spectrograms by running:
+
+```python
+python preprocess/audio.py
+```
+
+## Environment Setup
+
+Install the required dependencies using:
+
+```bash
+pip install -r requirements.txt
+```
+
+Python 3.10 or higher is recommended.
