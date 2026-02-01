@@ -1,0 +1,21 @@
+# Data
+data/
+
+# Environment
+.env
+
+# Model checkpoints
+checkpoints/
+checkpoints_mamba/
+checkpoints_transformer/
+
+# Outputs
+output.wav
+output_mel.npy
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
